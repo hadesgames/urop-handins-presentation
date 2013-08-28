@@ -7,7 +7,18 @@
 
 \subject{Marking Supervisions}
 \usetheme{Singapore}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 \begin{document}
+  % Define block styles
+  \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+      text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+  \tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+      text width=5em, text centered, rounded corners, minimum height=4em]
+  \tikzstyle{line} = [draw, -latex']
+  \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+      minimum height=2em]
 	%\frame{\titlepage}
 	\begin{frame}
 		\frametitle{Otter Handins}
@@ -28,6 +39,26 @@
   	   	 \end{itemize}	   	 
   	\end{frame}
   	
+    \begin{frame}
+        \begin{tikzpicture}[node distance = 2cm, auto]
+            % Place nodes
+            \node [block] (bin) {Create bin};
+            \node [cloud, left of=bin, node distance=3.5cm] (supervisor) {Supervisor};
+            \node [cloud, right of=bin, node distance=4.3cm] (otter) {Through Deadlines};
+            \node [block, below of=bin] (upload) {Upload Work};
+            \node [block, below of=upload] (mark) {Mark Work};
+            \node [block, below of=mark] (distribute) {Distribute Work};
+            
+            % Draw Edges
+            \path [line] (bin) -- (upload);
+            \path [line] (upload) -- (mark);
+            \path [line] (mark) -- (distribute);
+            
+            \path [line, dashed] (supervisor) -- (bin);
+            \path [line, dashed] (otter) -- (bin);
+         
+        \end{tikzpicture}
+    \end{frame}
   	\begin{frame}
     	\frametitle{Our approach}
     	\begin{itemize}
@@ -48,7 +79,17 @@
         \end{itemize}
     	\end{itemize}    	
     \end{frame}
-    
+    {
+      \setbeamercolor{frametitle}{fg=white, bg=black}
+      \setbeamercolor{background canvas}{bg=black}
+      \begin{frame}[plain]
+        \frametitle{CamScanner}
+        \makebox[\linewidth][c] {%
+          \includegraphics[height=8cm]{before.jpg}
+          \includegraphics[height=8cm]{after.jpg}
+        }  
+      \end{frame}
+    }
     \begin{frame}
     	\frametitle{...and for the supervisor}
     	\begin{itemize}
