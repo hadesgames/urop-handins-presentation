@@ -22,7 +22,7 @@
 	%\frame{\titlepage}
 	\begin{frame}
 		\frametitle{Otter Handins}
-    \framesubtitle{Supervising tool to organize, mark and store students work}
+    \framesubtitle{Supervising tool to organize, mark and store work}
 		%\framesubtitle{Supervising tool to organize, mark and store students work}
 		\begin{center}	
 		 \includegraphics[height=7cm]{otter.jpg}
@@ -35,16 +35,24 @@
    	   		\item Hard to organize and print the work from the students
           \item Work might not be submitted on time or in a good format
    	   		\item Parts of the work might get lost or overlooked
-   	   		\item No easy way for a DoS to look at a students work
+   	   		\item No easy way for a DoS to look at a student's work
   	   	 \end{itemize}	   	 
   	\end{frame}
-  	
+  	\begin{frame}
+    	\frametitle{Our approach}
+    	\begin{itemize}
+        \item A bin is a place where students can throw in a supervision's work
+    		\item Convert different work formats automatically to PDF 
+    		\item Work is easily accessible anywhere, anytime, forever
+    	\end{itemize}
+    \end{frame}
+    
     \begin{frame}
         \begin{tikzpicture}[node distance = 2cm, auto]
             % Place nodes
             \node [block] (bin) {Create bin};
-            \node [cloud, left of=bin, node distance=3.5cm] (supervisor) {Supervisor};
-            \node [cloud, right of=bin, node distance=4.3cm] (otter) {Through Deadlines};
+            \node [cloud, left of=bin, node distance=3.5cm] (supervisor) {By Supervisor};
+            \node [cloud, right of=bin, node distance=3.5cm] (otter) {By Deadline};
             \node [block, below of=bin] (upload) {Upload Work};
             \node [block, below of=upload] (mark) {Mark Work};
             \node [block, below of=mark] (distribute) {Distribute Work};
@@ -59,14 +67,7 @@
          
         \end{tikzpicture}
     \end{frame}
-  	\begin{frame}
-    	\frametitle{Our approach}
-    	\begin{itemize}
-        \item A bin is a place where students can throw in a supervision's work
-    		\item Convert different work formats automatically to PDF 
-    		\item Work is easily accessible anywhere, anytime, forever
-    	\end{itemize}
-    \end{frame}
+  	
     \begin{frame}
     	\frametitle{What it means for the student...}
     	\begin{itemize}
